@@ -24,7 +24,7 @@ def printHelp():
   print("Example: `python3.9 ResolveDepTree.py --name DateTime Package-Stash`")
   print("Notes: ")
   print("  There must be at least one option specified, and at least one name if the option specified is `--name`.")
-  print("  This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros, which must be named \"data\".")
+  print("  This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros, which must be named `data/`.")
   print("  You must have python 3.6 or later installed, and use whichever version you installed to run this program.")
 
 # check errors or other corner cases that would end the program immediately.
@@ -51,20 +51,11 @@ def checkCornerCases(argv):
 
 checkCornerCases(sys.argv)
 
-# filename incrementation to avoid duplicate names and overwriting
-n = 1
-fileName = "dependencies.json"
-while path.exists(fileName):
-  n += 1
-  fileName = f"dependencies{n}.json"
-
-# Parse necessary META.json files, possibly recursively. Write to a new json file.
-with open(fileName, "x") as out:
-  dict = {}
-  for i in range(2, len(sys.argv)):
-    dict[sys.argv[i]] = Parsing.parseAndCollect(sys.argv[i], coreModules, moduleDistroMap)
-  json.dump(dict, out, indent=4)
-  print("Success! " + fileName + " created.")
+# Parse necessary META.json files, possibly recursively. Print the resulting object.
+dict = {}
+for i in range(2, len(sys.argv)):
+  dict[sys.argv[i]] = Parsing.parseAndCollect(sys.argv[i], coreModules, moduleDistroMap)
+print(json.dumps(dict, indent=4))
 
 cm.close()
 mdm.close()

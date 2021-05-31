@@ -1,6 +1,12 @@
 # ResolveDepTree
 
-## Usage: <br/>
+## Description
+
+This program will output, to `stdout`, a `json` object that resolves the dependencies of distributions specified after the `--name` flag.
+
+For details about usage and directory structure, see below.
+
+## Usage:
 ```
 python3.[6..9] ResolveDepTree.py [--option argument1 argument2 ...]
 Options:
@@ -10,7 +16,7 @@ Options:
 Example: `python3.9 ResolveDepTree.py --name DateTime Package-Stash`<br/>
 Notes:<br/>
 There must be at least one option specified, and at least one name if the option specified is `--name`.<br/>
-This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros (which must be named "data").<br/>
+This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros (which must be named `data/`).<br/>
 You must have python 3.6 or later installed, and use whichever version you installed to run this program.
 
 ## Directory Structure
