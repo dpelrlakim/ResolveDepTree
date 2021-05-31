@@ -4,8 +4,8 @@
 ```
 python ResolveDepTree.py [--option argument1 argument2 ...]
 Options:
-    --name [name1] [name2] ...  :: The name(s) of distribution(s) for which dependencies should be resolved.
-    --help                      :: print out this help and exit the program.
+  --name [name1] [name2] ...  :: The name(s) of distribution(s) for which dependencies should be resolved.
+  --help                      :: print out this help and exit the program.
 ```
 Notes:<br/>
 There must be at least one option specified, and at least one name if the option specified is "--name".<br/>
