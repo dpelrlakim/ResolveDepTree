@@ -8,13 +8,10 @@ This script (and thus the other module for this script, Parsing.py) should be pl
 
 You want your directory to look like this:
 
-* data
+* data/
 * ResolveDepTree.py
 * Parsing.py
 * README.md
-* dependencies
-* dependencies1
-* ...
 
 To run this script, you must have python 3.6 or later installed.
 
