@@ -1,18 +1,15 @@
 # Eddie Kim
-# Edited May 30 2021
+# Edited May 31 2021
 
 import json
-import sys   # command line arguments
-import os
+import sys
 from os import path
 
-import data
-import DepTree
 import Parsing
 
 
-# If I use 'with' statements, then these files would need to be opened and closed many times, possibly hindering th.
-#   so I chose open it once globally, pass it as arguments and close it at the end of the module.
+# If I use 'with' statements, then these files would need to be opened and closed many times, possibly affecting the efficiency.
+#   So I chose open it once globally, pass it around as arguments and then close it at the end of the module.
 cm = open("./data/core-modules.json", "rt")
 mdm = open("./data/module-distro-map.json", "rt")
 coreModules  = json.load(cm)
@@ -47,16 +44,20 @@ def checkCornerCases(argv):
     print("At least one distribution name must be specified after the \"--name\" flag.")
     sys.exit()
 
+  if len(argv[1:]) != len(set(argv[1:])):
+    print("You have provided duplicate flags or values. Please make sure there aren't any and try again.")
+    sys.exit()
+
 checkCornerCases(sys.argv)
 
 # filename incrementation to avoid duplicate names and overwriting
-i = 1
+n = 1
 fileName = "dependencies.json"
 while path.exists(fileName):
-  i += 1
-  fileName = f"dependencies{i}.json"
+  n += 1
+  fileName = f"dependencies{n}.json"
 
-# Parse necessary META.json files, possibly recursively. Write to a new json file with the name that was decided above.
+# Parse necessary META.json files, possibly recursively. Write to a new json file.
 with open(fileName, "x") as out:
   dict = {}
   for i in range(2, len(sys.argv)):
