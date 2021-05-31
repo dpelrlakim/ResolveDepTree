@@ -2,14 +2,15 @@
 
 ## Usage: <br/>
 ```
-python ResolveDepTree.py [--option argument1 argument2 ...]
+python3.6 ResolveDepTree.py [--option argument1 argument2 ...]
 Options:
   --name [name1] [name2] ...  :: The name(s) of distribution(s) for which dependencies should be resolved.
   --help                      :: print out this help and exit the program.
 ```
 Notes:<br/>
 There must be at least one option specified, and at least one name if the option specified is `--name`.<br/>
-This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros (which must be named "data").
+This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros (which must be named "data").<br/>
+You must have python 3.6 or later installed, and use that to run this program.
 
 ## Directory Structure
 
