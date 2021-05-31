@@ -8,7 +8,7 @@ Options:
   --help                      :: print out this help and exit the program.
 ```
 Notes:<br/>
-There must be at least one option specified, and at least one name if the option specified is "--name".<br/>
+There must be at least one option specified, and at least one name if the option specified is `--name`.<br/>
 This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros (which must be named "data").
 
 ## Directory Structure
@@ -33,4 +33,4 @@ sudo apt update
 sudo apt install python3.6
 ```
 
-Once you do this, `cd` into the directory illustrated above, and run as shown in the usage help.
+Once you do this, `cd` into the directory illustrated above, and run in the command shell/terminal as shown in the usage help.
