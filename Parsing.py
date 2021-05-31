@@ -2,8 +2,6 @@ import json
 import sys
 from os import path
 
-import data
-
 def checkFileExistence(pathToFile):
   if path.exists(pathToFile) == False:
     return False
@@ -39,3 +37,4 @@ def parseAndCollect(distro, coreModules, moduleDistroMap):
       # recurse for the distro.
       requiredDistros[distro] = parseAndCollect(distro, coreModules, moduleDistroMap)
   return requiredDistros
+  
