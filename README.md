@@ -24,6 +24,9 @@ You must have python 3.6 or later installed, and use whichever version you insta
 You want your directory to look like this:
 
 * data/
+  * distribution1
+  * distribution2
+  * ...
 * ResolveDepTree.py
 * Parsing.py
 * README.md
