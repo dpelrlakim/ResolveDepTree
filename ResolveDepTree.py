@@ -17,15 +17,21 @@ moduleDistroMap = json.load(mdm)
 # printed when --help flag is used.
 def printHelp():
   print()
+  print("This program will output, to `stdout`, a `json` object that resolves the dependencies of distributions specified after the `--name` flag.")
+  print("For more details about directory structure, see `README`.")
+  print()
   print("Usage: python3.[6..9] ResolveDepTree.py [--option argument1 argument2 ...]")
   print("Options:")
   print("  --name [name1] [name2] ...   :: The name(s) of distribution(s) for which dependencies should be resolved.")
   print("  --help                       :: print out this help and exit the program.")
+  print()
   print("Example: `python3.9 ResolveDepTree.py --name DateTime Package-Stash`")
+  print()
   print("Notes: ")
   print("  There must be at least one option specified, and at least one name if the option specified is `--name`.")
   print("  This script (and thus the other module for this script, Parsing.py) should be placed within the same directory as the folder containing all the distros, which must be named `data/`.")
   print("  You must have python 3.6 or later installed, and use whichever version you installed to run this program.")
+  print()
 
 # check errors or other corner cases that would end the program immediately.
 def checkCornerCases(argv):
