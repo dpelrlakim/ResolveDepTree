@@ -1,0 +1,21 @@
+"""
+A non-binary tree structure to be used to preserve the dependency hierarchy for a directory of distributions.
+Includes an output method that maps the tree of distributions into a new json file.
+"""
+
+import Parsing
+
+class DepTree:  
+  # initializes a "root" node that has all top-level distros as its children.
+  def __init__(self, val):
+    self.val = val
+    self.children = []
+    self.parent = None
+
+  def addChild(self, distroName):
+    self.children.append(distroName)
+    self.addChild(distroName)
+
+  
+
+  
